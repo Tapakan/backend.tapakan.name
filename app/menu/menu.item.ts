@@ -4,6 +4,8 @@ export class MenuItem
 
     public link;
 
+    public icon;
+
     public children;
 
     constructor(data: any)
@@ -11,5 +13,6 @@ export class MenuItem
         this.title    = data.title;
         this.link     = data.link;
         this.children = data.children;
+        this.icon     = data.icon;
     }
 }
