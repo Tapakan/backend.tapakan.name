@@ -1,0 +1,39 @@
+.header {
+    background-color: #282828;
+    width: 100%;
+    height: 66px;
+    position: fixed;
+    z-index: 1;
+}
+
+.sidebar {
+    width: 180px;
+    top: 66px;
+    left: 0;
+    display: block;
+    min-height: 100%;
+    background-color: #282828;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar-list-item {
+    display: block;
+    position: relative;
+    float: none;
+    padding: 0;
+}
+
+.sidebar .sidebar-list-link {
+    height: 42px;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 42px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #ffffff;
+    overflow: hidden;
+    text-shadow: none;
+    white-space: nowrap;
+}
