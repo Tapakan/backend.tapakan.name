@@ -9,13 +9,20 @@ var gulp       = require('gulp'),
     cssmin     = require('gulp-minify-css');
 
 var paths = {
-    styles: 'app/**/*.scss',
+    styles: {
+        app : 'app/**/*.scss',
+        main: 'assets/app.scss'
+    },
     ts    : 'app/**/*.ts'
 };
 
 gulp.task('watch', function () {
-    watch([paths.styles], function (event, cb) {
+    watch([paths.styles.app], function (event, cb) {
         gulp.start('style:build');
+    });
+
+    watch([paths.styles.main], function (event, cb) {
+        gulp.start('app:style:build');
     });
 
     watch([paths.ts], function (event, cb) {
@@ -24,7 +31,15 @@ gulp.task('watch', function () {
 });
 
 gulp.task('style:build', function () {
-    gulp.src(paths.styles, {base: "./"})
+    gulp.src(paths.styles.app, {base: "./"})
+        .pipe(sass())
+        .pipe(prefixer())
+        .pipe(cssmin())
+        .pipe(gulp.dest('.'));
+});
+
+gulp.task('app:style:build', function () {
+    gulp.src(paths.styles.main, {base: "./"})
         .pipe(sass())
         .pipe(prefixer())
         .pipe(cssmin())
