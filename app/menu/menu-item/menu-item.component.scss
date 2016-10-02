@@ -1,0 +1,82 @@
+.sidebar {
+
+  &-list {
+    margin: 0;
+    padding: 18px 0 0;
+    list-style: none;
+
+    &-item {
+      display: block;
+      position: relative;
+      float: none;
+      padding: 0;
+
+      i.glyphicon {
+        margin-right: 18px;
+        width: 16px;
+        display: inline-block;
+      }
+
+      b.glyphicon {
+        display: block;
+        opacity: 1;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        text-shadow: none;
+        font-size: 11px;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+      }
+
+      &.active {
+        b {
+          transform: rotate(180deg);
+        }
+        .sidebar-sublist {
+          display: block;
+        }
+      }
+
+    }
+
+    &-link {
+      height: 42px;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 42px;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+      color: #ffffff;
+      overflow: hidden;
+      text-shadow: none;
+      white-space: nowrap;
+
+      &:hover {
+        color: #00abff;
+        b {
+          color: #00abff;
+          transition: transform 0.2s linear;
+        }
+      }
+
+    }
+
+  }
+
+  &-sublist {
+    display: none;
+
+    .sidebar-list-link {
+      padding-left: 52px;
+      line-height: 29px;
+      height: auto;
+    }
+
+  }
+}

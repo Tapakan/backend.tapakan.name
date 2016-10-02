@@ -1,0 +1,19 @@
+<li class="sidebar-list-item" [ngClass]="{'active': state }">
+
+    <a *ngIf="!item.children" class="sidebar-list-link" routerLink="{{ item.link }}">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i>
+        <span>{{ item.title }}</span>
+    </a>
+
+    <a *ngIf="item.children" class="sidebar-list-link" (click)="state = !state" [ngClass]="{'active': state }">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i>
+        <span>{{ item.title }}</span>
+        <b class="glyphicon glyphicon-chevron-down" [ngClass]="{'glyphicon-chevron-up': state }"></b>
+    </a>
+
+    <ul *ngIf="item.children" class="sidebar-sublist">
+        <eva-menu-item
+                [item]="item"
+                *ngFor="let item of item.children"></eva-menu-item>
+    </ul>
+</li>

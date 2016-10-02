@@ -1,13 +1,14 @@
-import { Component } from "@angular/core"
+import { Component, Input } from "@angular/core"
 
 @Component({
-    selector : 'eva-menu-item',
-    template : 'app/menu/menu-item/menu-item.component.html',
-    styleUrls: [
+    selector   : 'eva-menu-item',
+    templateUrl: 'app/menu/menu-item/menu-item.component.html',
+    styleUrls  : [
         'app/menu/menu-item/menu-item.component.css'
     ]
 })
 
-export class MenuItem
+export class MenuItemComponent
 {
+    @Input() item: any;
 }

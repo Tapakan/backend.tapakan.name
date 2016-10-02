@@ -3,12 +3,13 @@ import { FormsModule }   from "@angular/forms"
 import { HttpModule }    from "@angular/http"
 import { BrowserModule } from "@angular/platform-browser"
 
-import { MenuComponent }  from "./menu/menu.component"
-import { MenuService }    from "./menu/menu.service"
-import { routing }        from "./app-routing.module"
-import { AppComponent }   from "./app.component"
-import { PostsComponent } from "./posts/posts.component"
-import { PostsService }   from "./posts/posts.service"
+import { MenuComponent }     from "./menu/menu.component"
+import { MenuService }       from "./menu/menu.service"
+import { routing }           from "./app-routing.module"
+import { AppComponent }      from "./app.component"
+import { PostsComponent }    from "./posts/posts.component"
+import { PostsService }      from "./posts/posts.service"
+import { MenuItemComponent } from "./menu/menu-item/menu-item.component"
 
 @NgModule({
     imports     : [
@@ -20,7 +21,8 @@ import { PostsService }   from "./posts/posts.service"
     declarations: [
         MenuComponent,
         AppComponent,
-        PostsComponent
+        PostsComponent,
+        MenuItemComponent
     ],
     providers: [
         MenuService,
