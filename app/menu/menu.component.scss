@@ -15,25 +15,4 @@
   background-color: #282828;
   height: 100%;
   position: fixed;
-
-  &-list-item {
-    display: block;
-    position: relative;
-    float: none;
-    padding: 0;
-  }
-
-  &-list-link {
-    height: 42px;
-    padding-left: 18px;
-    font-size: 13px;
-    line-height: 42px;
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-    color: #ffffff;
-    overflow: hidden;
-    text-shadow: none;
-    white-space: nowrap;
-  }
 }
