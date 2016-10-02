@@ -12,8 +12,6 @@ import { MenuItem }          from "./menu.item"
 
 export class MenuComponent implements OnInit
 {
-    classes: Array<boolean> = [];
-
     /**
      *
      */
