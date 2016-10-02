@@ -6,17 +6,19 @@ var gulp       = require('gulp'),
     sass       = require('gulp-sass'),
     ts         = require('gulp-typescript'),
     sourcemaps = require('gulp-sourcemaps'),
-    cssmin     = require('gulp-minify-css'),
-    paths      = {
-        styles: 'app/**/*.scss'
-    };
+    cssmin     = require('gulp-minify-css');
+
+var paths = {
+    styles: 'app/**/*.scss',
+    ts    : 'app/**/*.ts'
+};
 
 gulp.task('watch', function () {
     watch([paths.styles], function (event, cb) {
         gulp.start('style:build');
     });
 
-    watch([paths.styles], function (event, cb) {
+    watch([paths.ts], function (event, cb) {
         gulp.start('ts:build');
     });
 });
@@ -33,7 +35,7 @@ gulp.task('ts:build', function () {
 
     var tsProject = ts.createProject('./tsconfig.json');
 
-    gulp.src(paths.styles)
+    gulp.src(paths.ts)
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
         .pipe(sourcemaps.write('.'))
