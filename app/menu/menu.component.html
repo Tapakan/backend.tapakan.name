@@ -1,20 +1,9 @@
 <header class="header">
 
 </header>
+
 <aside class="sidebar">
     <ul class="sidebar-list">
-        <li *ngFor="let item of list, let i = index" [ngClass]="{'open': classes[i]}">
-            <a routerLink="{{ item.link }}" class="sidebar-list-link" (click)="classes[i]=!classes[i]">
-                <i class="glyphicon glyphicon-cog"></i>
-                {{ item.title }}
-            </a>
-
-            <ul>
-                <li *ngFor="let child of item.children">
-                    {{ child.title }}
-                </li>
-            </ul>
-
-        </li>
+        <eva-menu-item [item]="item" *ngFor="let item of list"></eva-menu-item>
     </ul>
 </aside>
