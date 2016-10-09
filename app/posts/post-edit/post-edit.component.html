@@ -1,0 +1,45 @@
+<div class="content-top">
+    <h1 class="title">
+        Post edit
+    </h1>
+</div>
+<eva-card *ngIf="post">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+            <div class="form-group post-name">
+                <label class="control-label">
+                    Name
+                </label>
+                <input [(ngModel)]="post.name" placeholder="Post name" class="form-control"/>
+            </div>
+
+            <div class="form-group post-alias">
+                <label class="control-label">
+                    Alias
+                </label>
+                <input [(ngModel)]="post.alias" placeholder="Post alias" class="form-control"/>
+            </div>
+
+            <div class="form-group post-content">
+                <label class="control-label">
+                    Content
+                </label>
+                <eva-ckeditor [content]="post.content" (notify)='onNotify($event)'></eva-ckeditor>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group post-name">
+                <label class="control-label">
+                    Publish date
+                </label>
+
+                <input type="datetime" [(ngModel)]="post.publishDate.date" class="form-control" readonly/>
+            </div>
+        </div>
+
+        <button class="btn btn-success" type="submit" (click)="save()">Submit</button>
+    </div>
+</eva-card>
