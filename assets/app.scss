@@ -1,7 +1,9 @@
 $icon-font-path: 'fonts/';
 
 @import "bootstrap/bootstrap";
+@import "bootstrap";
 @import "reset.scss";
+@import "buttons";
 
 body {
   margin: 0;
@@ -10,4 +12,25 @@ body {
   a {
     transition: color 0.2s ease;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+.content-top {
+  padding-top: 13px;
+  padding-bottom: 27px;
+}
+
+h1.title {
+  font-weight: 700;
+  color: #fff;
+  float: left;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  opacity: 0.9;
 }

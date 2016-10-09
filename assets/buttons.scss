@@ -1,0 +1,31 @@
+.btn {
+  transition: all 0.1s ease;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem 1rem;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: .25rem;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &-success {
+    background: #8bd22f;
+    border-color: #8bd22f;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background: #8bd22f;
+      border-color: #73ba17;
+    }
+  }
+}
