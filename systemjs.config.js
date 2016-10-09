@@ -30,19 +30,15 @@
             'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
             'ts'                        : 'npm:plugin-typescript@4.0.10/lib/plugin.js',
             'typescript'                : 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js'
-
         },
+
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
-            app                         : {
+            app       : {
                 main            : './main.js',
                 defaultExtension: 'js'
             },
-            rxjs                        : {
-                defaultExtension: 'js'
-            },
-            'angular2-in-memory-web-api': {
-                main            : './index.js',
+            rxjs      : {
                 defaultExtension: 'js'
             }
         }
