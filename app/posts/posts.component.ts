@@ -1,10 +1,12 @@
 import { Component, OnInit } from "@angular/core"
-import { PostsService }      from "./posts.service"
-import { PostItem }          from "./post.item"
+import { Router }            from "@angular/router"
+
+import { PostService }  from "./post.service"
+import { PostItem }     from "./post.item"
 
 @Component({
     selector   : 'eva-posts',
-    templateUrl: 'app/posts/posts.template.html',
+    templateUrl: 'app/posts/posts.component.html',
     styleUrls  : [
         'app/posts/posts.component.css'
     ]
@@ -19,9 +21,10 @@ export class PostsComponent implements OnInit
 
     /**
      *
+     * @param router
      * @param service
      */
-    constructor(private service: PostsService)
+    constructor(private router: Router, private service: PostService)
     {
 
     }
@@ -35,5 +38,15 @@ export class PostsComponent implements OnInit
                 component.list.push(new PostItem(items[i]));
             }
         });
+    }
+
+    /**
+     *
+     * @param post PostItem
+     */
+    edit(post: PostItem): void
+    {
+        let link = ['posts/', post.id];
+        this.router.navigate(link);
     }
 }
