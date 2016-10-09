@@ -2,7 +2,7 @@ import { Component } from "@angular/core"
 
 @Component({
     selector   : "eva-app",
-    templateUrl: "app/app.template.html",
+    templateUrl: "app/app.component.html",
     styleUrls  : [
         'app/app.component.css'
     ]
